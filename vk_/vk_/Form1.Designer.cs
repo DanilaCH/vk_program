@@ -102,6 +102,7 @@
             this.buttonSpam.TabIndex = 5;
             this.buttonSpam.Text = "Рассылка";
             this.buttonSpam.UseVisualStyleBackColor = true;
+            this.buttonSpam.Click += new System.EventHandler(this.buttonSpam_Click);
             // 
             // buttonRepost
             // 
