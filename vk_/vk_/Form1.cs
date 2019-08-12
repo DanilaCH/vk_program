@@ -15,6 +15,7 @@ namespace WindowsFormsApplication1
     public partial class Form1 : Form
     {
         string access_token;
+        string user_id;
         public Form1()
         {
             
@@ -43,6 +44,9 @@ namespace WindowsFormsApplication1
                 labelFirstName.Text = user.response[0].first_name;
                 labelLastName.Text = user.response[0].last_name;
 
+                label1.Text = user.response[0].id.ToString();
+                user_id = label1.Text;
+
                 pictureBoxAvatar.Load(user.response[0].photo_200);
             }
 
@@ -51,13 +55,15 @@ namespace WindowsFormsApplication1
         private void Form1_Load(object sender, EventArgs e)
         {
             webBrowserAutorization.BringToFront();
-            webBrowserAutorization.Navigate("https://oauth.vk.com/authorize?client_id=6410347&display=page&redirect_uri=https://oauth.vk.com/blank.html&scope=friends+photos+messages&response_type=token&v=5.100&state=123456");
+            webBrowserAutorization.Navigate("https://oauth.vk.com/authorize?client_id=6410347&display=page&redirect_uri=https://oauth.vk.com/blank.html&scope=friends+photos+messages+wall&response_type=token&v=5.100&state=123456");
         }
 
         private void buttonSpam_Click(object sender, EventArgs e)
         {
-            FormSpam Spam = new FormSpam();
-            Spam.Show();
+            LikesForm Like = new LikesForm();
+            Like.Access_token = access_token;
+            Like.User_id = user_id;
+            Like.Show();
         }
 
     }

@@ -12,7 +12,7 @@ C:\Users\Юзер\Desktop\vk_\vk_\bin\Debug\vk_.exe
 C:\Users\Юзер\Desktop\vk_\vk_\bin\Debug\vk_.pdb
 C:\Users\Юзер\Desktop\vk_\vk_\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Юзер\Desktop\vk_\vk_\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
-C:\Users\Юзер\Desktop\vk_\vk_\obj\x86\Debug\WindowsFormsApplication1.FormSpam.resources
 C:\Users\Юзер\Desktop\vk_\vk_\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
 C:\Users\Юзер\Desktop\vk_\vk_\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Users\Юзер\Desktop\vk_\vk_\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Юзер\Desktop\vk_\vk_\obj\x86\Debug\WindowsFormsApplication1.LikesForm.resources
