@@ -8,6 +8,7 @@ namespace WindowsFormsApplication1
     public class PhotosAlbums
     {
         public Response response { get; set; }
+
         public class Item
         {
             public int id { get; set; }

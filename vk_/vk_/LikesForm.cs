@@ -61,8 +61,8 @@ namespace WindowsFormsApplication1
                 button1.Visible = true;
                 textBox1.Text = "";
                 label1.Text = "Введите ID альбома";
-                columnHeader1.Text = "Номер фотографии";
-                columnHeader2.Text = "ID Фотографии";
+                columnHeader1.Text = "Название альбома";
+                columnHeader2.Text = "ID альбома";
             }
             else
             {
@@ -79,8 +79,8 @@ namespace WindowsFormsApplication1
 
                 PhotosAlbums user = JsonConvert.DeserializeObject<PhotosAlbums>(answer);
 
-                int CountPhotoAlbums = user.response.count;
-                string[] texts = new string[CountPhotoAlbums];
+                //int CountPhotoAlbums = user.response.count;
+                string[] texts = new string[user.response.count];
                 listView1.Items.Clear();
                 foreach (PhotosAlbums.Item item in user.response.items)
                 {
@@ -96,8 +96,8 @@ namespace WindowsFormsApplication1
                 button1.Visible = true;
                 textBox1.Text = "";
                 label1.Text = "Введите ID альбома";
-                columnHeader1.Text = "Номер фотографии";
-                columnHeader2.Text = "ID Фотографии";
+                columnHeader1.Text = "Название альбома";
+                columnHeader2.Text = "ID альбома";
             }
 
 
@@ -145,6 +145,8 @@ namespace WindowsFormsApplication1
                 button2.Visible = true;
                 textBox1.Text = "";
                 label1.Text = "Введите ID Фотографии";
+                columnHeader1.Text = "Номер фотографии";
+                columnHeader2.Text = "ID фотографии";
             }
         }
 
@@ -188,7 +190,7 @@ namespace WindowsFormsApplication1
 
                 Photo user2 = JsonConvert.DeserializeObject<Photo>(answer);
 
-                textBox2.Text = "Лайк поставлен!";
+                //textBox2.Text = "Лайк поставлен!";
                 textBox1.Text = textBox1.Text + "\r\n" + answer;
             }
         }
@@ -214,16 +216,6 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void pictureBox1_MouseEnter(object sender, EventArgs e)
-        {
-            Help.Visible = true;
-        }
-
-        private void pictureBox1_MouseLeave(object sender, EventArgs e)
-        {
-            Help.Visible = false;
-        }
-
         private void Back_Click(object sender, EventArgs e)
         {
             listView1.Items.Clear();
@@ -235,9 +227,39 @@ namespace WindowsFormsApplication1
             label1.Text = "Введите ID пользователя";
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void UsersSearch_Click(object sender, EventArgs e)
         {
+            string request = "https://api.vk.com/method/users.search?q=" + textBox1.Text + "&hometown=" + textBox3.Text + "&fields=photo_200_orig&" + Access_token + "&v=5.52";
+            WebClient client = new WebClient();
+            string answer = Encoding.UTF8.GetString(client.DownloadData(request));
 
+            UsersSearch user = JsonConvert.DeserializeObject<UsersSearch>(answer);
+
+            string[] texts1 = new string[2];
+            listView1.Items.Clear();
+            foreach (UsersSearch.Item ID in user.response.items)
+            {
+                try
+                {
+                    Application.DoEvents();
+
+                    pictureBox1.Load(ID.photo_200_orig);
+
+                    imageList1.ImageSize = new Size(70, 70);
+                    imageList1.Images.Add(pictureBox1.Image);
+
+                    texts1[0] = ID.last_name + " " + ID.first_name;
+                    texts1[1] = ID.id.ToString();
+
+                    ListViewItem lvi = new ListViewItem(texts1, imageList1.Images.Count);
+                    listView1.Items.Add(lvi);
+
+                }
+                catch
+                {
+
+                }
+            }
         }
     }
 }

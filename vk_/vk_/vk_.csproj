@@ -50,12 +50,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class1.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormComments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormComments.Designer.cs">
+      <DependentUpon>FormComments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRepost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRepost.Designer.cs">
+      <DependentUpon>FormRepost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormWordGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormWordGame.Designer.cs">
+      <DependentUpon>FormWordGame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Messages.cs" />
     <Compile Include="Friends.cs" />
     <Compile Include="Likes.cs" />
     <Compile Include="LikesForm.cs">
@@ -68,23 +88,34 @@
     <Compile Include="PhotosAlbums.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Response.cs" />
+    <Compile Include="UsersSearch.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormComments.resx">
+      <DependentUpon>FormComments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRepost.resx">
+      <DependentUpon>FormRepost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormWordGame.resx">
+      <DependentUpon>FormWordGame.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LikesForm.resx">
       <DependentUpon>LikesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -97,6 +128,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\Доп.Информация.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Help.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
