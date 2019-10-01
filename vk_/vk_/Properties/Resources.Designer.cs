@@ -60,9 +60,37 @@ namespace WindowsFormsApplication1.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap Доп_Информация {
+        internal static System.Drawing.Bitmap Background {
             get {
-                object obj = ResourceManager.GetObject("Доп.Информация", resourceCulture);
+                object obj = ResourceManager.GetObject("Background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Background2 {
+            get {
+                object obj = ResourceManager.GetObject("Background2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Background3 {
+            get {
+                object obj = ResourceManager.GetObject("Background3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Background4 {
+            get {
+                object obj = ResourceManager.GetObject("Background4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Help {
+            get {
+                object obj = ResourceManager.GetObject("Help", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
